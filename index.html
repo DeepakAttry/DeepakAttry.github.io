@@ -1,2 +1,690 @@
-this is my first site
-this is my updated website
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <title>Manish Kumar | MBA · Business Economics</title>
+    <meta name="description" content="Manish Kumar: MBA student at University of Delhi, specialising in Business Economics, Data Analytics and Financial Modelling.">
+    <meta name="theme-color" content="white">
+    <meta name="keywords" content="9999110668,Manishattry, manishchaudhary440@gmail.com,Share,link, Manish Chaudhary">
+    <meta name="author" content="Manish Kumar">
+    <!-- Viewport-->
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FManishAttry%20Logo%20192%C3%97192.jpg?alt=media">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FManishAttry%20Logo%20192%C3%97192.jpg?alt=media">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FManishAttry%20Logo%20192%C3%97192.jpg?alt=media">
+    <link rel="shortcut icon" type="image/x-icon" href="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FManishAttry%20Logo%20192%C3%97192.jpg?alt=media">
+    <link rel="icon" type="image/svg+xml" href="https://around.createx.studio/favicon.svg">
+    <meta name="theme-color" content="white">
+
+  <!-- Theme mode -->
+  <script>
+    let mode = window.localStorage.getItem('mode'),
+        root = document.getElementsByTagName('html')[0];
+    if (mode !== undefined && mode === 'dark') {
+      root.classList.add('dark-mode');
+    } else {
+      root.classList.remove('dark-mode');
+    }
+  </script>
+
+  <!-- Page loading styles -->
+  <style>
+    .page-loading {
+      position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+      width: 100%; height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff; opacity: 0; visibility: hidden; z-index: 9999;
+    }
+    .dark-mode .page-loading { background-color: #121519; }
+    .page-loading.active { opacity: 1; visibility: visible; }
+    .page-loading-inner {
+      position: absolute; top: 50%; left: 0; width: 100%; text-align: center;
+      -webkit-transform: translateY(-50%); transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out; transition: opacity .2s ease-in-out; opacity: 0;
+    }
+    .page-loading.active > .page-loading-inner { opacity: 1; }
+    .page-loading-inner > span {
+      display: block; font-family: 'Inter', sans-serif; font-size: 1rem;
+      font-weight: normal; color: #6f788b;
+    }
+    .dark-mode .page-loading-inner > span { color: #fff; opacity: .6; }
+    .page-spinner {
+      display: inline-block; width: 2.75rem; height: 2.75rem; margin-bottom: .75rem;
+      vertical-align: text-bottom; background-color: #d7dde2; border-radius: 50%; opacity: 0;
+      -webkit-animation: spinner .75s linear infinite; animation: spinner .75s linear infinite;
+    }
+    .dark-mode .page-spinner { background-color: rgba(255,255,255,.25); }
+    @-webkit-keyframes spinner {
+      0% { -webkit-transform: scale(0); transform: scale(0); }
+      50% { opacity: 1; -webkit-transform: none; transform: none; }
+    }
+    @keyframes spinner {
+      0% { -webkit-transform: scale(0); transform: scale(0); }
+      50% { opacity: 1; -webkit-transform: none; transform: none; }
+    }
+
+    /* ── Custom additions on top of Around theme ── */
+
+    /* Hero badge pulse */
+    .hero-badge-pulse {
+      animation: badgePulse 3s ease-in-out infinite;
+    }
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(var(--ar-warning-rgb), 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(var(--ar-warning-rgb), 0); }
+    }
+
+    /* Skill pill hover lift */
+    .skill-pill {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: default;
+    }
+    .skill-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.12) !important;
+    }
+
+    /* Project card hover */
+    .project-card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .project-card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.12) !important;
+    }
+
+    /* Contact icon bounce */
+    .contact-icon-bounce:hover i {
+      animation: iconBounce 0.4s ease;
+    }
+    @keyframes iconBounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-5px); }
+      70% { transform: translateY(-2px); }
+    }
+
+    /* Hire modal entrance */
+    .hire-card-animate {
+      animation: hireSlideUp 0.4s ease forwards;
+    }
+    @keyframes hireSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stat counter shimmer */
+    .stat-number {
+      background: linear-gradient(90deg, var(--ar-primary), var(--ar-warning));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    /* Timeline dot pulse */
+    .timeline-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--ar-primary);
+      animation: dotPulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(var(--ar-primary-rgb), 0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(var(--ar-primary-rgb), 0); }
+    }
+
+    /* Section fade-in override for smoother feel */
+    [data-aos] { pointer-events: auto !important; }
+  </style>
+
+  <!-- Page loading script -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () { preloader.remove(); }, 1500);
+      };
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Around vendor & theme CSS (exact same CDN as original) -->
+  <link rel="stylesheet" media="screen" href="https://around.createx.studio/assets/vendor/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" media="screen" href="https://around.createx.studio/assets/vendor/aos/dist/aos.css"/>
+  <link rel="stylesheet" href="https://around.createx.studio/assets/icons/around-icons.min.css">
+  <link rel="stylesheet" media="screen" href="https://around.createx.studio/assets/css/theme.min.css">
+</head>
+
+<body>
+
+  <!-- Page loading spinner -->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+
+  <!-- Page wrapper -->
+  <main class="page-wrapper">
+
+    <!-- ══════════════════════════════════════        NAVBAR       ════════════════════════════════════════ -->
+    <header class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand pe-sm-3" href="#top" data-scroll>
+          <span class="text-primary flex-shrink-0 me-2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FSource%20Code%2FMain%20Website%20Logo.svg?alt=media&token=d0218408-1e04-4993-afef-2700c330f056" width="30" alt="Manish Kumar">
+          </span>Manish
+        </a>
+
+        <!-- Dark/light toggle -->
+        <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+          <input class="form-check-input" type="checkbox" id="theme-mode">
+          <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+          <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+        </div>
+
+        <!-- Hire Me CTA -->
+        <a class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="#hire" data-scroll>
+          <i class="ai-briefcase fs-xl me-2 ms-n1"></i>Hire Me
+        </a>
+
+        <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+            <li class="nav-item"><a class="nav-link" href="#skills" data-scroll><i class="ai-grid fs-xl me-2 ms-n1"></i>Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects" data-scroll><i class="ai-code fs-xl me-2 ms-n1"></i>Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#hire" data-scroll><i class="ai-mail fs-xl me-2 ms-n1"></i>Contact</a></li>
+          </ul>
+          <div class="d-sm-none p-3 mt-n3">
+            <a class="btn btn-primary w-100 mb-1" href="#hire" data-scroll>
+              <i class="ai-briefcase fs-xl me-2 ms-n1"></i>Hire Me
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════         HERO      ════════════════════════════════════════ -->
+
+    <section id="top" class="overflow-hidden">
+      <div class="container pt-4 pt-sm-4 pb-sm-2 pb-md-4 py-xl-5 mt-5">
+        <div class="row align-items-center py-2 mt-md-2 my-lg-3 my-xl-4 my-xxl-5">
+
+          <!-- Illustration side -->
+          <div class="col-lg-7 order-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-md-5 mb-lg-0 pb-3 pb-md-0">
+            <div class="parallax me-lg-n4 me-xl-n5" style="max-width: 650px;">
+              <div class="parallax-layer" data-depth="0.3">
+                <img src="https://manishattry.github.io/assets/Portfolio Website Photo.png">
+              </div>
+              <div class="parallax-layer" data-depth="-0.6">
+                <img src="https://around.createx.studio/assets/img/landing/business-consulting/hero/02.png" alt="Layer">
+              </div>
+              <div class="parallax-layer" data-depth="0.75">
+                <img src="https://around.createx.studio/assets/img/landing/business-consulting/hero/03.png" alt="Layer">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text side -->
+          <div class="col-lg-5 order-lg-1">
+
+            <!-- decorative underline svg (same as original) -->
+            <div class="text-warning position-absolute top-40 start-50 translate-middle-x w-100 mt-md-3" style="pointer-events:none;">
+              <svg width="550" height="66" viewBox="0 0 608 66" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity=".35" d="M45.66 63.0651C48.1682 62.8708 50.692 62.5736 53.2046 62.482C55.5493 62.3949 57.8918 62.3033 60.232 62.2161C73.0671 61.7358 85.8977 61.1192 98.7394 60.9293C112.169 60.7304 125.603 60.402 139.035 60.3663C152.743 60.3328 166.446 60.2747 180.152 60.3417C206.867 60.4757 231.522 59.2366 258.233 59.3013C290.201 57.8797 306.797 56.9045 334.904 55.6546C348.07 55.5876 361.243 55.2681 374.408 55.0111C387.336 54.7632 399.538 53.6311 412.46 53.1396C415.299 53.0323 418.137 52.8201 420.972 52.6548C423.774 52.4894 426.583 52.3576 429.383 52.1432C436.572 51.5913 444.461 51.7091 451.639 51.0545C464.138 49.9061 476.595 48.378 489.11 47.4218C502.221 46.4209 515.361 45.8534 528.486 45.0379C534.408 44.6715 540.366 44.2135 546.249 43.4048C552.974 42.4865 559.639 41.3762 566.288 39.991C572.715 38.6505 579.137 37.2743 585.567 35.9584C588.655 35.3261 591.757 34.7497 594.873 34.2984C598.4 33.7868 601.894 33.2618 605.377 32.5044C607.052 32.138 607.381 29.8927 607.381 28.4494C607.388 27.6273 607.258 26.8297 606.995 26.0567C606.749 25.4065 606.232 24.3676 605.377 24.3967C599.094 24.6089 592.816 24.8234 586.535 25.1205C580.2 25.4177 573.853 25.6009 567.51 25.6903C555.192 25.8578 542.852 25.4311 530.548 24.9172C532.645 24.6335 534.742 24.3498 536.839 24.0638C544.371 23.0361 551.882 21.7448 559.453 21.0522C563.482 20.6813 567.524 20.373 571.541 19.8971C573.579 19.6581 575.599 19.381 577.614 18.9744C579.777 18.5365 581.91 17.9378 584.036 17.339C584.719 17.2653 585.234 16.9212 585.587 16.3158C586.213 15.4489 586.5 14.2872 586.608 13.1746C588.761 12.511 589.194 9.31622 589.194 7.39709C589.207 6.20853 589.022 5.05348 588.635 3.93417C588.261 2.94892 587.55 1.55034 586.297 1.53694C579.758 1.46321 573.23 1.01862 566.691 0.938188C565.93 0.931485 565.163 0.927017 564.397 0.927017C558.77 0.927017 553.155 1.17501 547.535 1.47885C535.016 2.1558 522.495 2.96679 509.989 3.87832C504.175 4.29834 498.369 4.79655 492.551 5.15178C485.435 5.58297 478.335 5.91139 471.212 6.19066C459.296 6.65536 447.361 6.83632 435.438 7.05527C421.763 7.3122 408.106 7.67189 394.447 8.31756C381.795 8.91631 369.155 9.7139 356.512 10.4757C343.816 11.2354 331.122 11.9905 318.427 12.7613C305.415 13.5499 292.394 14.1353 279.373 14.7206C272.783 15.02 266.185 15.1071 259.593 15.297C253.354 15.4758 247.107 15.5227 240.864 15.6143C228.574 15.7952 216.287 15.9069 203.998 16.0343C179.21 16.2867 154.428 16.6934 129.642 17.1067C116.025 17.3346 102.412 17.587 88.7943 17.8439C81.8486 17.9758 74.9007 18.2506 67.9594 18.4539C62.0236 18.6259 56.0901 19.0303 50.1565 19.3364C43.8406 19.6625 37.5247 20.0222 31.2089 20.3886C27.4542 20.6076 23.6952 20.8332 19.9362 21.0522C18.3053 21.1505 16.67 21.2443 15.0346 21.3426C13.5474 21.4297 12.0579 21.5415 10.5729 21.6554C9.51432 21.7358 8.47346 21.89 7.42818 22.0687C6.26798 22.2631 5.11442 22.7859 4.00063 23.1657C3.33545 23.7019 2.87138 24.381 2.61503 25.2099C2.24156 26.3002 2.05814 27.4217 2.0714 28.5768C2.05814 29.7341 2.24156 30.8556 2.61503 31.9459C2.81834 32.3569 3.02165 32.768 3.22496 33.1769C3.60506 33.8292 4.15974 34.1979 4.88901 34.2783C6.1818 34.6492 7.4547 35.0156 8.78063 35.2367C9.50548 35.1563 10.0602 34.7922 10.4381 34.142C10.5817 33.9432 10.7077 33.7309 10.8182 33.5075C11.5121 33.4896 12.2082 33.4919 12.9043 33.4919C13.5695 33.4919 14.2369 33.4874 14.9043 33.4718C16.407 33.4383 17.9053 33.4003 19.4058 33.3645C23.2709 33.2729 27.136 33.1791 31.0011 33.0875C35.1889 32.987 39.3766 32.911 43.5622 32.8373C43.129 32.8753 42.6981 32.9132 42.265 32.9467C32.3735 33.7242 22.4886 34.5062 12.606 35.3931C11.0038 35.5741 9.79056 36.3784 8.95301 37.806C7.71768 39.5129 7.04366 41.7135 6.70996 43.9231C4.97299 43.9075 3.2338 43.8873 1.49682 43.8739C0.28359 43.865 0.0449219 46.0031 0.0449219 46.8252C0.0449219 47.6608 0.28359 49.7564 1.50345 49.7698C3.1675 49.7855 4.83376 49.8145 6.49781 49.8369C6.64146 51.6934 7.01272 53.5098 7.62265 55.2882C8.06905 56.1908 8.51545 57.0934 8.96184 57.9937C9.79719 59.4213 15.9944 65.1786 17.5966 65.3596C26.9466 64.5218 36.3011 63.789 45.66 63.0651Z"></path>
+              </svg>
+            </div>
+
+            <h1 class="position-relative display-3 text-center text-lg-start pb-sm-2 pb-md-3 mt-2">
+              Manish Kumar
+            </h1>
+            <p class="fs-lg text-center text-lg-start pb-xl-2 mx-auto mx-lg-0 mb-4" style="max-width: 480px;">
+              MBA student at <strong>Department of Business Economics, DU.</strong> I turn data into decisions through - econometrics, financial modelling, Power BI dashboards, and clean code.
+            </p>
+
+            <!-- Quick stats row -->
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-4 mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+              <div class="text-center text-lg-start">
+                <div class="stat-number">AIR 129</div>
+                <div class="fs-xs text-body-secondary">IPU CET 2025 · Top 0.43%</div>
+              </div>
+
+              <div class="text-center text-lg-start">
+                <div class="stat-number">7 month</div>
+                <div class="fs-xs text-body-secondary">Research Analyst Experience</div>
+              </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+              <a href="#hire" class="btn btn-primary rounded-pill px-4" data-scroll>
+                <i class="ai-briefcase me-2"></i>Hire Me
+              </a>
+              <a href="#projects" class="btn btn-outline-secondary rounded-pill px-4" data-scroll>
+                <i class="ai-code me-2"></i>View Projects
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════         SKILLS       ════════════════════════════════════════ -->
+    <section id="skills" class="py-1 mt-5">
+      <div class="container py-md-2 py-lg-4">
+        <h2 class="h1 text-center mb-2" data-aos="fade-up">My Skills</h2>
+        <p class="text-center text-body-secondary mb-5" data-aos="fade-up" data-aos-delay="50">
+          Tools &amp; technologies I work with
+        </p>
+
+        <!-- Skills grid -->
+        <div class="row g-3 justify-content-center">
+
+          <!-- Data & Analytics -->
+          <div class="col-12" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0">
+           
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Python</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">SQL</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">MS Excel</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Power BI</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Front-End Dev</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">PowerPoint</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Business Analysis</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Econometrics</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Financial Modelling</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Market Research</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill px-3 py-2 fs-sm skill-pill">Credit Risk Modelling</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Certifications strip -->
+        <div class="mt-2 p-4 bg-secondary rounded-4" data-aos="fade-up" data-aos-duration="400">
+          <h5 class="mb-3">📜 Certifications &amp; Training</h5>
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-3">
+              <div class="d-flex align-items-start gap-2">
+                <i class="ai-check-alt text-primary fs-5 mt-1 flex-shrink-0"></i>
+                <span class="fs-sm">Google Data Analytics Certificate</span>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="d-flex align-items-start gap-2">
+                <i class="ai-check-alt text-primary fs-5 mt-1 flex-shrink-0"></i>
+                <span class="fs-sm">Machine Learning with Python — IBM (Coursera, 19+ hrs)</span>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="d-flex align-items-start gap-2">
+                <i class="ai-check-alt text-primary fs-5 mt-1 flex-shrink-0"></i>
+                <span class="fs-sm">Credit Risk Modelling Workshop — Peaks2Tails</span>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <div class="d-flex align-items-start gap-2">
+                <i class="ai-check-alt text-primary fs-5 mt-1 flex-shrink-0"></i>
+                <span class="fs-sm">Excel, PowerPoint &amp; Power BI — Havish M. Consulting (32 hrs)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PROJECTS════════════════════════════════════════ -->
+
+    <section id="projects" class="container pt-2 pb-sm-3 mt-3 mb-2 mb-md-3 mb-lg-4 mb-xxl-5">
+
+      <h2 class="h1 pb-3" data-aos="fade-up">Featured Projects</h2>
+
+      <!-- Project 1: Webshare -->
+      <div class="row align-items-center pt-xl-2 pb-4 mb-lg-2 mb-xl-3 mb-xxl-4">
+        <div class="col-md-7 col-lg-6 mb-4 mb-md-0" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="200" data-bs-toggle="modal" data-bs-target="#modalWebshare">
+          <!-- Replace src with your own project screenshot URL -->
+          <img style="aspect-ratio: 1460 / 800; " src="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FSource%20Code%2Fcta-screens.png?alt=media&token=720aed44-bd0a-4932-9b31-1b06fac4cc5b"
+               class="project-img-cover rounded-5 project-card-hover"
+               alt="Webshare Project Screenshot">
+        </div>
+        <div class="col-md-5 col-xl-4 offset-lg-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="150">
+          <div class="ps-md-3 ps-lg-0">
+            <span class="badge text-nav fs-xs border mb-2">Tech · Web Dev</span>
+            <h2 class="h4">Webshare — Anonymous File Sharing App</h2>
+            <p class="fs-sm pb-3 pb-lg-4 mb-3">
+              Built a lightweight web application that lets users share files seamlessly without exposing personal details. Uses HTML, CSS, and JavaScript — focused on privacy-first design.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-sm btn-dark rounded-pill" href="https://manishattry.github.io/webshare" target="_blank">
+                <i class="ai-github me-1"></i>Source Code
+              </a>
+              <a class="btn btn-sm btn-outline-secondary rounded-pill"
+                 data-bs-toggle="modal" data-bs-target="#modalWebshare">
+                <i class="ai-eye me-1"></i>View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Power BI Dashboard -->
+      <div class="row align-items-center pt-xl-2 pb-4 mb-lg-2 mb-xl-3 mb-xxl-4">
+        <div class="col-md-7 col-lg-6 mb-4 mb-md-0 order-md-2" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="200" data-bs-toggle="modal" data-bs-target="#modalWebshare">
+          <!-- Replace src with your own Power BI dashboard screenshot URL -->
+          <img style="aspect-ratio: 1460 / 860;" src="https://around.createx.studio/assets/img/portfolio/list/07.png"
+               class="project-img-cover rounded-5 project-card-hover"
+               alt="Power BI Dashboard Screenshot">
+        </div>
+        <div class="col-md-5 col-xl-4 offset-lg-1 order-md-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="150">
+          <div class="ps-md-3 ps-lg-0">
+            <span class="badge text-nav fs-xs border mb-2">Data · Power BI</span>
+            <h2 class="h4">Interactive Power BI Dashboard — Blinkit Sales</h2>
+            <p class="fs-sm pb-3 pb-lg-4 mb-3">
+              Developed a full interactive Power BI dashboard to analyse Blinkit's sales data, revealing key business trends. Used DAX queries to create calculated measures, KPIs, and trend visualisations to support data-driven decision-making.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-sm btn-dark rounded-pill" href="https://github.com/ManishAttry" target="_blank">
+                <i class="ai-github me-1"></i>Source Code
+              </a>
+              <a class="btn btn-sm btn-outline-secondary rounded-pill"
+                 data-bs-toggle="modal" data-bs-target="#modalPowerBI">
+                <i class="ai-eye me-1"></i>View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Research — Market Analysis -->
+      <div class="row align-items-center pt-xl-2 pb-4 mb-lg-2 mb-xl-3 mb-xxl-4">
+        <div class="col-md-7 col-lg-6 mb-4 mb-md-0" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="200" data-bs-toggle="modal" data-bs-target="#modalWebshare">
+          <!-- Replace src with your own research/analysis screenshot URL -->
+          <img style="aspect-ratio: 1460 / 860;" src="https://around.createx.studio/assets/img/portfolio/list/08.png"
+               class="project-img-cover rounded-5 project-card-hover"
+               alt="Market Research Project Screenshot">
+        </div>
+        <div class="col-md-5 col-xl-4 offset-lg-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="150">
+          <div class="ps-md-3 ps-lg-0">
+            <span class="badge text-nav fs-xs border mb-2">Research · Analytics</span>
+            <h2 class="h4">Competitor Pricing &amp; Market Analysis — Rapture Biotech</h2>
+            <p class="fs-sm pb-3 pb-lg-4 mb-3">
+              As Research Analyst, benchmarked costs across 15+ rival products, identified digital trends using Meta Insights and surveys, and generated actionable insights to guide product positioning strategy.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-sm btn-dark rounded-pill" href="https://github.com/ManishAttry" target="_blank">
+                <i class="ai-github me-1"></i>Source Code
+              </a>
+              <a class="btn btn-sm btn-outline-secondary rounded-pill"
+                 data-bs-toggle="modal" data-bs-target="#modalResearch">
+                <i class="ai-eye me-1"></i>View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+ 
+  <!-- ═══════════════════════════════════════       PROJECT DETAIL MODALS     ════════════════════════════════════════ -->
+
+  <!-- Webshare Modal -->
+  <div class="modal fade" id="modalWebshare" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content hire-card-animate">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title">Webshare — File Sharing App</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <span class="badge bg-info bg-opacity-10 text-info rounded-pill fs-xs mb-3">Tech · Web Dev</span>
+          <p>A privacy-first web application that allows users to share files without revealing personal details. Designed to be lightweight and simple, using only front-end web technologies.</p>
+          <h6 class="mt-3 mb-2">Key Features</h6>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Anonymous file sharing — no personal data exposed</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Clean, responsive UI built with HTML, CSS &amp; Bootstrap</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Accessible from any device through a web browser</span></li>
+          </ul>
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <span class="badge bg-secondary rounded-pill fs-xs">HTML</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">CSS</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">Bootstrap</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">JavaScript</span>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="https://manishattry.github.io/webshare" target="_blank" class="btn btn-dark rounded-pill btn-sm">
+            <i class="ai-github me-1"></i>View on GitHub
+          </a>
+          <button type="button" class="btn btn-secondary rounded-pill btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Power BI Modal -->
+  <div class="modal fade" id="modalPowerBI" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content hire-card-animate">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title">Interactive Power BI Dashboard</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill fs-xs mb-3">Data Analytics · Power BI</span>
+          <p>Developed a fully interactive Power BI dashboard to analyse Blinkit's sales dataset. The dashboard surfaces key business trends and provides stakeholders with actionable KPI insights.</p>
+          <h6 class="mt-3 mb-2">What I Built</h6>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Custom DAX measures for revenue, growth rate, and category breakdown</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>KPI cards and time-series trend charts for sales monitoring</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Slicer-based filtering for region, category, and time period</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Insights presented for data-driven decision-making</span></li>
+          </ul>
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <span class="badge bg-secondary rounded-pill fs-xs">Power BI</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">DAX</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">Data Visualisation</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">Business Analytics</span>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="https://github.com/ManishAttry" target="_blank" class="btn btn-dark rounded-pill btn-sm">
+            <i class="ai-github me-1"></i>View on GitHub
+          </a>
+          <button type="button" class="btn btn-secondary rounded-pill btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Research Modal -->
+  <div class="modal fade" id="modalResearch" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content hire-card-animate">
+        <div class="modal-header border-0 pb-0">
+          <h4 class="modal-title">Competitor Pricing &amp; Market Analysis</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <span class="badge bg-secondary border rounded-pill fs-xs mb-3">Research · Market Analytics</span>
+          <p>During my tenure at Rapture Biotech (Dec 2024 – Jul 2025), I led end-to-end market research initiatives that directly shaped the company's product positioning strategy.</p>
+          <h6 class="mt-3 mb-2">Key Contributions</h6>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Benchmarked pricing and costs across 15+ competitor products</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Researched digital trends and customer behaviour using Instagram and Meta Insights</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Co-authored an 8-page literature review on Mycobacterium tuberculosis</span></li>
+            <li class="d-flex align-items-start gap-2 mb-2"><i class="ai-check-alt text-primary flex-shrink-0 mt-1"></i><span>Translated findings into actionable strategic recommendations for leadership</span></li>
+          </ul>
+          <div class="d-flex gap-2 flex-wrap mt-3">
+            <span class="badge bg-secondary rounded-pill fs-xs">Meta Insights</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">Market Research</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">Competitor Analysis</span>
+            <span class="badge bg-secondary rounded-pill fs-xs">MS Excel</span>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="https://github.com/ManishAttry" target="_blank" class="btn btn-dark rounded-pill btn-sm">
+            <i class="ai-github me-1"></i>View on GitHub
+          </a>
+          <button type="button" class="btn btn-secondary rounded-pill btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- ═══════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
+    <footer id="hire" class="footer bg-secondary py-5">
+      <div class="container pt-md-2 pt-lg-3 pt-xl-4">
+        <div class="row pb-5 pt-sm-2 mb-lg-2 g-4">
+          <!-- Brand col -->
+          <div class="col-md-12 col-lg-4 pb-2 pb-lg-0">
+            <a class="navbar-brand py-0 mb-3 mb-lg-4 d-inline-flex" href="#top" data-scroll>
+              <span class="text-primary flex-shrink-0 me-2">
+                <img src="https://firebasestorage.googleapis.com/v0/b/manish-attri.appspot.com/o/Site%2FSource%20Code%2FMain%20Website%20Logo.svg?alt=media&token=d0218408-1e04-4993-afef-2700c330f056" width="30" alt="Manish Kumar">
+              </span>
+              <span class="text-nav">Manish Kumar</span>
+            </a>
+            <p class="fs-sm pb-2 pb-lg-3 mb-3">
+              MBA (Business Economics) · University of Delhi<br>
+              Data Analyst · Researcher · Front-End Developer
+            </p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-icon btn-sm btn-secondary btn-telegram rounded-circle" href="https://telegram.me/ManishAttry" target="_blank"><i class="ai-telegram"></i></a>
+              <a class="btn btn-icon btn-sm btn-secondary rounded-circle" href="https://instagram.com/manishchaudhary.in" target="_blank"><i class="ai-instagram"></i></a>
+              <a class="btn btn-icon btn-sm btn-secondary rounded-circle" href="https://github.com/ManishAttry" target="_blank"><i class="ai-github"></i></a>
+              <a class="btn btn-icon btn-sm btn-secondary rounded-circle" href="mailto:ManishChaudhary440@gmail.com"><i class="ai-mail"></i></a>
+            </div>
+          </div>
+
+          <div class="col-sm-1 col-lg-1 offset-xl-1 mb-1 mb-sm-0"></div>
+
+          <!-- Contact cards — same design as hire section, smaller size -->
+          <div class="col-sm-8 col-lg-6">
+
+            <div class="row g-3">
+
+              <div class="col-6" data-aos="fade-up" data-aos-delay="0">
+                <a href="mailto:ManishChaudhary440@gmail.com" class="card border-0 shadow-sm text-decoration-none contact-icon-bounce project-card-hover">
+                  <div class="card-body text-center p-3">
+                    <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:44px;height:44px;">
+                      <i class="ai-mail text-primary fs-5"></i>
+                    </div>
+                    <h6 class="fs-xs fw-semibold mb-1">Email</h6>
+                    <p class="fs-xs text-body-secondary mb-0 text-truncate">ManishChaudhary440@gmail.com</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+                <a href="tel:+919999110668" class="card border-0 shadow-sm text-decoration-none contact-icon-bounce project-card-hover">
+                  <div class="card-body text-center p-3">
+                    <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:44px;height:44px;">
+                      <i class="ai-phone text-success fs-5"></i>
+                    </div>
+                    <h6 class="fs-xs fw-semibold mb-1">Phone</h6>
+                    <p class="fs-xs text-body-secondary mb-0">+91 99991 10668</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://www.linkedin.com/in/manishkumar-mba" target="_blank" class="card border-0 shadow-sm text-decoration-none contact-icon-bounce project-card-hover">
+                  <div class="card-body text-center p-3">
+                    <div class="bg-info bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:44px;height:44px;">
+                      <i class="ai-linkedin text-info fs-5"></i>
+                    </div>
+                    <h6 class="fs-xs fw-semibold mb-1">LinkedIn</h6>
+                    <p class="fs-xs text-body-secondary mb-0">manishkumar-mba</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://github.com/ManishAttry" target="_blank" class="card border-0 shadow-sm text-decoration-none contact-icon-bounce project-card-hover">
+                  <div class="card-body text-center p-3">
+                    <div class="bg-secondary border rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:44px;height:44px;">
+                      <i class="ai-github fs-5"></i>
+                    </div>
+                    <h6 class="fs-xs fw-semibold mb-1">GitHub</h6>
+                    <p class="fs-xs text-body-secondary mb-0">ManishAttry</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <p class="fs-sm mb-0">
+          <span class="opacity-70">© 2025 · Designed with ❤️ by </span>
+          <a class="nav-link d-inline fw-normal p-0" href="#top" data-scroll>Manish Kumar</a>
+        </p>
+      </div>
+    </footer>
+ 
+    <!-- Back to top -->
+    <a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg>
+      <i class="ai-arrow-up"></i>
+    </a>
+
+  </main><!-- /page-wrapper -->
+
+  <!-- ═══════════════════════════════════════       SCRIPTS   ════════════════════════════════════════ -->
+  <script src="https://around.createx.studio/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://around.createx.studio/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://around.createx.studio/assets/vendor/parallax-js/dist/parallax.min.js"></script>
+  <script src="https://around.createx.studio/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://around.createx.studio/assets/vendor/aos/dist/aos.js"></script>
+  <script src="https://around.createx.studio/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+  <!-- Dark/light mode toggle (same as original) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const themeSwitch = document.getElementById('theme-mode');
+      const root = document.documentElement;
+      let storedMode = localStorage.getItem('mode');
+      if (storedMode === 'dark') {
+        root.setAttribute('data-bs-theme', 'dark');
+        themeSwitch.checked = true;
+      } else {
+        root.setAttribute('data-bs-theme', 'light');
+        themeSwitch.checked = false;
+      }
+      themeSwitch.addEventListener('change', function() {
+        if (this.checked) {
+          root.setAttribute('data-bs-theme', 'dark');
+          localStorage.setItem('mode', 'dark');
+        } else {
+          root.setAttribute('data-bs-theme', 'light');
+          localStorage.setItem('mode', 'light');
+        }
+      });
+    });
+  </script>
+
+  <!-- Main Around theme script -->
+  <script src="https://around.createx.studio/assets/js/theme.min.js"></script>
+
+</body>
+</html>
